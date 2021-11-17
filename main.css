@@ -67,4 +67,58 @@ i {
   justify-content: center;
   gap: 25px; }
 
-/*# sourceMappingURL=main.css.map */
+  .team {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+    > div {
+
+    }
+
+    .card {
+        min-height: 515px;
+        &-image {
+            width: 370px;
+            height: 456px;
+            position: relative;
+            transition: all 0.3s;
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to bottom, #f85665, #f554b6);
+                opacity: 0;
+                transition: all 0.3s;
+            }
+
+            &:hover::before {
+                opacity: 0.85;
+            }
+
+            &:hover + .card-content {
+                transform: translateY(calc(-456px / 2));
+                
+                h4 {
+                    margin-bottom: 20px;
+                }
+                .social {
+                    opacity: 1;
+                }
+            }
+
+        }
+        
+        &-content {
+            text-align: center;
+            margin-top: 10px;
+            transition: all 0.3s;
+
+            .social {
+                opacity: 0;
+            }
+        }
+
+    }
+}
